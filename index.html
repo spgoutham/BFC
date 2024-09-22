@@ -24,8 +24,38 @@
     background-color: #4CAF50;
     color: white;
   }
-  .highlight {
-    background-color: #f1f1f1;
+  @keyframes goldShimmer {
+    0%, 100% {
+      color: black;
+    }
+    50% {
+      color: #b8860b; /* Dark gold color for 1st rank */
+    }
+  }
+  @keyframes redShimmer {
+    0%, 100% {
+      color: black;
+    }
+    50% {
+      color: red; /* Red color for 2nd rank */
+    }
+  }
+  @keyframes blueShimmer {
+    0%, 100% {
+      color: black;
+    }
+    50% {
+      color: #00BFFF; /* Light blue color for 3rd rank */
+    }
+  }
+  .gold {
+    animation: goldShimmer 3s linear infinite;
+  }
+  .red {
+    animation: redShimmer 3s linear infinite;
+  }
+  .blue {
+    animation: blueShimmer 3s linear infinite;
   }
 </style>
 </head>
@@ -149,8 +179,22 @@
     nameCell.innerHTML = team.name;
     branchCell.innerHTML = team.branch;
     pointsCell.innerHTML = team.points;
-  });
-}
+
+    if (lastRank === 1) {
+        nameCell.classList.add('gold');
+        branchCell.classList.add('gold');
+        pointsCell.classList.add('gold');
+      } else if (lastRank === 2) {
+        nameCell.classList.add('red');
+        branchCell.classList.add('red');
+        pointsCell.classList.add('red');
+      } else if (lastRank === 3) {
+        nameCell.classList.add('blue');
+        branchCell.classList.add('blue');
+        pointsCell.classList.add('blue');
+      }
+    });
+  }
 
 
   updateLeaderboard();
