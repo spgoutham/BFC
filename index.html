@@ -125,22 +125,33 @@
   }
 
   function updateLeaderboard() {
-    teams.sort((a, b) => b.points - a.points);
-    const table = document.getElementById('leaderboard');
-    table.innerHTML = '<tr><th>Rank</th><th>Team Name</th><th>Branch</th><th>Points</th></tr>';
+  teams.sort((a, b) => b.points - a.points);
+  const table = document.getElementById('leaderboard');
+  table.innerHTML = '<tr><th>Rank</th><th>Team Name</th><th>Branch</th><th>Points</th></tr>';
 
-    teams.forEach((team, index) => {
-      const row = table.insertRow(-1);
-      const rankCell = row.insertCell(0);
-      const nameCell = row.insertCell(1);
-      const branchCell = row.insertCell(2);
-      const pointsCell = row.insertCell(3);
-      rankCell.innerHTML = index + 1;
-      nameCell.innerHTML = team.name;
-      branchCell.innerHTML = team.branch;
-      pointsCell.innerHTML = team.points;
-    });
-  }
+  let lastScore = -1;
+  let lastRank = 0;
+  let rankCounter = 0;
+
+  teams.forEach((team) => {
+    rankCounter++; // Increment for each team
+    if (team.points !== lastScore) {
+      lastRank = rankCounter;
+      lastScore = team.points;
+    }
+
+    const row = table.insertRow(-1);
+    const rankCell = row.insertCell(0);
+    const nameCell = row.insertCell(1);
+    const branchCell = row.insertCell(2);
+    const pointsCell = row.insertCell(3);
+    rankCell.innerHTML = lastRank;
+    nameCell.innerHTML = team.name;
+    branchCell.innerHTML = team.branch;
+    pointsCell.innerHTML = team.points;
+  });
+}
+
 
   updateLeaderboard();
 </script>
