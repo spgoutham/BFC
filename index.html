@@ -182,14 +182,17 @@
     pointsCell.innerHTML = team.points;
 
     if (lastRank === 1) {
+        rankCell.classList.add('gold');
         nameCell.classList.add('gold');
         branchCell.classList.add('gold');
         pointsCell.classList.add('gold');
       } else if (lastRank === 2) {
+        rankCell.classList.add('red');
         nameCell.classList.add('red');
         branchCell.classList.add('red');
         pointsCell.classList.add('red');
       } else if (lastRank === 3) {
+        rankCell.classList.add('blue');
         nameCell.classList.add('blue');
         branchCell.classList.add('blue');
         pointsCell.classList.add('blue');
