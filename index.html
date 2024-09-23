@@ -109,57 +109,43 @@
 
 <script>
   let teams = [
-    { name: "TAMILSELVAN D V", branch: "AI&DS 2", points: 0 },
-    { name: "Vishnu vardhan", branch: "Ai&ds 2", points: 0 },
-    { name: "Catherine J", branch: "CSE - 1", points: 0 },
-    { name: "JAYAKARTHIKEYAN", branch: "Cse 2", points: 0 },
-    { name: "Balamurugan", branch: "CSE-1", points: 0 },
-    { name: "Yazhini k", branch: "AIDS 2", points: 0 },
-    { name: "Vijay B", branch: "Artificial intelligence and data science", points: 0 },
-    { name: "SURYA PRAKASH M", branch: "AI & DS", points: 0 },
-    { name: "BHARATH M", branch: "CSE- I", points: 0 },
-    { name: "Harssini. G", branch: "CSE1", points: 0 },
-    { name: "Hari prakash S", branch: "Cse-1", points: 0 },
-    { name: "AAFIYA THAHSEEN S", branch: "CSE-1", points: 0 },
-    { name: "MUMMANENI NIVAS", branch: "CSE-2", points: 0 },
-    { name: "Padmapriya S", branch: "AIDS 2", points: 0 },
-    { name: "Catherine J", branch: "CSE - 1", points: 0 },
-    { name: "SHARMILI.P", branch: "AI and DS - 2", points: 0 },
-    { name: "SHAILESH AG", branch: "CSE-3", points: 0 },
-    { name: "Tamilselvi", branch: "Ai &ds 2", points: 0 },
-    { name: "YUVEDHA D", branch: "AIDS-2", points: 0 },
-    { name: "Pradeep", branch: "AIDS 2", points: 0 },
-    { name: "Mummaneni Chethana", branch: "Cse-2", points: 0 },
-    { name: "ELAKIYA SREE P", branch: "CSE 1", points: 0 },
-    { name: "F. JERIN WILLIAMS", branch: "Cse - 2", points: 0 },
-    { name: "Yazhini k", branch: "AI and DS 2", points: 0 },
-    { name: "SHALINI R", branch: "AI DS-2", points: 0 },
-    { name: "J.yeshwanth davidson", branch: "Ai&ds-2", points: 0 },
-    { name: "Lithilyaa S", branch: "BE CSE-2", points: 0 },
-    { name: "Karthikeyan", branch: "CSE-2", points: 0 },
-    { name: "MOGAN G", branch: "IT 1", points: 0 },
-    
-   
-    { name: "R. Tamilarasi", branch: "AI and DS 2", points: 0 },
-    { name: "Aswin Kumar", branch: "IT-1", points: 0 },
-    { name: "Adlin Florida. D", branch: "B.tech it-1", points: 0 },
-    { name: "Sakthivel U", branch: "AI and DS - II", points: 0 },
-    { name: "Akshara. S", branch: "IT-1", points: 0 },
-    { name: "Geetha Devi. A", branch: "B.TECH.IT - 1", points: 0 },
-    
-   
-    
-   
-   
-  
-  
-    { name: "J. Yeshwanth davidson", branch: "Aids-2", points: 0 }
+    { name: "TAMILSELVAN D V", branch: "AI&DS", points: 0 },
+    { name: "Vishnu Vardhan", branch: "AI&DS", points: 0 },
+    { name: "Catherine J", branch: "CSE", points: 0 },
+    { name: "Jayakarthikeyan", branch: "CSE", points: 0 },
+    { name: "Balamurugan", branch: "CSE", points: 0 },
+    { name: "Yazhini K", branch: "AI&DS", points: 0 },
+    { name: "Vijay B", branch: "AI&DS", points: 0 },
+    { name: "Surya Prakash M", branch: "AI&DS", points: 0 },
+    { name: "Bharath M", branch: "CSE", points: 0 },
+    { name: "Harssini G", branch: "CSE", points: 0 },
+    { name: "Hari Prakash S", branch: "CSE", points: 0 },
+    { name: "Aafiyaa Thahseen S", branch: "CSE", points: 0 },
+    { name: "Mummaneni Nivas", branch: "CSE", points: 0 },
+    { name: "Padmapriya S", branch: "AI&DS", points: 0 },
+    { name: "Sharmili P", branch: "AI&DS", points: 0 },
+    { name: "Shaileesh AG", branch: "CSE", points: 0 },
+    { name: "Tamilselvi", branch: "AI&DS", points: 0 },
+    { name: "Yuvendha D", branch: "AI&DS", points: 0 },
+    { name: "Pradeep", branch: "AI&DS", points: 0 },
+    { name: "Mummaneni Chethana", branch: "CSE", points: 0 },
+    { name: "Elakiya Sree P", branch: "CSE", points: 0 },
+    { name: "F. Jerin Williams", branch: "CSE", points: 0 },
+    { name: "Yazhini K", branch: "AI&DS", points: 0 },
+    { name: "Shalini R", branch: "AI&DS", points: 0 },
+    { name: "J. Yeshwanth Davidson", branch: "AI&DS", points: 0 },
+    { name: "Lithilyaa S", branch: "CSE", points: 0 },
+    { name: "Karthikeyan", branch: "CSE", points: 0 },
+    { name: "Mogan G", branch: "IT", points: 0 },
+    { name: "R. Tamilarasi", branch: "AI&DS", points: 0 },
+    { name: "Aswin Kumar", branch: "IT", points: 0 },
+    { name: "Adlin Florida D", branch: "IT", points: 0 },
+    { name: "Sakthivel U", branch: "AI&DS", points: 0 },
+    { name: "Akshara S", branch: "IT", points: 0 },
+    { name: "Geetha Devi A", branch: "IT", points: 0 },
+    { name: "J. Yeshwanth Davidson", branch: "AI&DS", points: 0 }
+];
 
-   
-   
-    
-    
-  ];
 
   function addPoints(teamName, pointsToAdd) {
     const team = teams.find(t => t.name === teamName);
