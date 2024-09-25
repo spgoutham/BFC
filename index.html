@@ -162,7 +162,7 @@
   function updateLeaderboard() {
   teams.sort((a, b) => b.points - a.points);
   const table = document.getElementById('leaderboard');
-  table.innerHTML = '<tr><th>Rank</th><th>Team Name</th><th>Branch</th><th>Points</th></tr>';
+  table.innerHTML = '<tr><th>Rank</th><th>Participants Name</th><th>Branch</th><th>Points</th></tr>';
 
   let lastScore = -1;
   let lastRank = 0;
