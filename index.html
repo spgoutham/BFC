@@ -1,201 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<title>AIC Leaderboard</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background: #FFFCF2;
-    margin: 0;
-    padding: 20px;
-    text-align: center;
-  }
-   
-  h1.shimmer {
-      font-family: 'Poppins', sans-serif;
-      font-size: 2.5rem;
-      font-weight: 600;
-      background: linear-gradient(to right, #ff8c00 20%, #FFD700 50%, #ff8c00 80%);
-      background-size: 200% auto;
-      color: #fff;
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-fill-color: transparent;
-      animation: shimmer 5s linear infinite;
-      text-align: center; /* Centering the text */
-      margin: 0 auto; /* Ensuring it's centered */
-    }
-  
-  .small-heading {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.5rem; /* Adjusted size */
-      font-weight: 400;
-      color: #8A2BE2; /* Violet color */
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTS WAR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #FFFCF2;
+      margin: 0;
+      padding: 30px;
       text-align: center;
-      margin: 20px auto; /* Adding margin to ensure space */
     }
 
-  @keyframes shimmer {
-      0% {
-        background-position: -200% center;
+    .logo {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    h1.small-heading {
+      font-family: 'Poppins', sans-serif;
+      color: #8A2BE2;
+      font-weight: normal;
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #00BFFF;
+      color: white;
+    }
+
+    /* Shimmer animations */
+    @keyframes goldShimmer {
+      0%, 100% {
+        color: gold;
       }
-      100% {
-        background-position: 200% center;
+      50% {
+        color: #b8860b; /* Dark gold color for 1st rank */
       }
     }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  th, td {
-    padding: 8px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-  }
-  th {
-    background-color: #00BFFF;
-    color: white;
-  }
-  @keyframes goldShimmer {
-    0%, 100% {
-      color: gold;
+
+    @keyframes greenShimmer {
+      0%, 100% {
+        color: green;
+      }
+      50% {
+        color: #39FF14; /* Neon green for 2nd rank */
+      }
     }
-    50% {
-      color: #b8860b; /* Dark gold color for 1st rank */
+
+    @keyframes blueShimmer {
+      0%, 100% {
+        color: blue;
+      }
+      50% {
+        color: #00BFFF; /* Light blue for 3rd rank */
+      }
     }
-  }
-  @keyframes redShimmer {
-    0%, 100% {
-      color: green;
+
+    /* Applying shimmer effect */
+    .gold {
+      animation: goldShimmer 3s linear infinite;
     }
-    50% {
-      color:  #39FF14; /* Red color for 2nd rank */
+
+    .green {
+      animation: greenShimmer 3s linear infinite;
     }
-  }
-  @keyframes blueShimmer {
-    0%, 100% {
-      color: blue;
+
+    .blue {
+      animation: blueShimmer 3s linear infinite;
     }
-    50% {
-      color: #00BFFF; /* Light blue color for 3rd rank */
+
+    /* Button styles */
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #00BFFF;
+      color: white;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-top: 20px;
+      text-decoration: none;
     }
-  }
-  .gold {
-    animation: goldShimmer 3s linear infinite;
-  }
-  .green {
-    animation: redShimmer 3s linear infinite;
-  }
-  .blue {
-    animation: blueShimmer 3s linear infinite;
-  }
-</style>
+
+    /* Hover effect for button */
+    .button:hover {
+      background-color: #008CBA;
+      transform: scale(1.05);
+    }
+
+  </style>
 </head>
 <body>
-<h1 class="shimmer">BUILD FROM SCRATCH</h1>
-<h1 class="small-heading">Overall Leaderboard</h1>
-<table id="leaderboard">
-  <tr>
-    <th>Rank</th>
-    <th>Participants Name</th>
-    <th>Branch</th>
-    <th>Points</th>
-  </tr>
-</table>
+  <img src="logo.png" alt="Logo" class="logo">
+  <h1 class="small-heading">CURRENT RANKINGS</h1>
+  <table id="leaderboard">
+    <tr>
+      <th>Rank</th>
+      <th>Team Name</th>
+      <th>Erangel</th>
+      <th>Vikendi</th>
+      <th>Miramar</th>
+      <th>Sanhok</th>
+      <th>Total Points</th>
+    </tr>
+  </table>
 
-<script>
-  let teams = [
-    { name: "TAMILSELVAN D V", branch: "AI&DS", points: 85 },
-    { name: "Vishnu Vardhan", branch: "AI&DS", points: 36.5 },
-    { name: "Catherine J", branch: "CSE", points: 75.8 },
-    { name: "Jayakarthikeyan", branch: "CSE", points: 39.5},
-    { name: "Balamurugan", branch: "CSE", points: 30.7 },
-    { name: "Yazhini K", branch: "AI&DS", points: 72 },
-    { name: "Bharath M", branch: "CSE", points: 31 },
-    { name: "Harssini G", branch: "CSE", points: 39 },
-    { name: "Hari Prakash S", branch: "CSE", points: 33.5 },
-    { name: "Aafiyaa Thahseen S", branch: "CSE", points: 93 },
-    { name: "Mummaneni Nivas", branch: "CSE", points: 82.7 },
-    { name: "Padmapriya S", branch: "AI&DS", points: 44.5 },
-    { name: "Sharmili P", branch: "AI&DS", points: 79 },
-    { name: "Tamilselvi", branch: "AI&DS", points: 15 },
-    { name: "Yuvendha D", branch: "AI&DS", points: 66.5 },
-    { name: "Mummaneni Chethana", branch: "CSE", points: 41.5 },
-    { name: "Elakiya Sree P", branch: "CSE", points: 81 },
-    { name: "F. Jerin Williams", branch: "CSE", points: 92.2 },
-    { name: "Shalini R", branch: "AI&DS", points: 38.5 },
-    { name: "J. Yeshwanth Davidson", branch: "AI&DS", points: 33.5 },
-    { name: "Lithilyaa S", branch: "CSE", points: 77.5 },
-    { name: "Karthikeyan", branch: "CSE", points: 5 },
-    { name: "S Hari haran", branch: "CSE", points: 17.5 },
-    { name: "R. Tamilarasi", branch: "AI&DS", points: 77.5 },
-    { name: "Maheshwari S", branch: "AI&DS", points: 20.5 },
-    { name: "Adlin Florida D", branch: "IT", points: 12 },
-    { name: "Sakthivel U", branch: "AI&DS", points: 34.5 },
-    { name: "Akshara S", branch: "IT", points: 35 },
-    { name: "Geetha Devi A", branch: "IT", points: 40.5 }   
-];
+  <!-- Button -->
+  <a href="weeks.html" class="button">View Weekly Results</a>
 
+  <script>
+    let teams = [
+      { name: "SO-BTS", erangel: 2, vikendi: 0, miramar: 0, sanhok: 0, page: 'sobts.html' },
+      { name: "M-BTS", erangel: 1, vikendi: 0, miramar: 2, sanhok: 0, page: 'mbts.html' },
+      { name: "JORD-BTS", erangel: 0, vikendi: 0, miramar: 0, sanhok: 1, page: 'jordbts.html' },
+      { name: "H-BTS", erangel: 0, vikendi: 0, miramar: 1, sanhok: 0, page: 'hbts.html' },
+      { name: "BTS", erangel: 2, vikendi: 1, miramar: 1, sanhok: 0, page: 'bts.html' }
+    ];
 
-  function addPoints(teamName, pointsToAdd) {
-    const team = teams.find(t => t.name === teamName);
-    if (team) {
-      team.points += pointsToAdd;
-      updateLeaderboard();
-    }
-  }
+    function updateLeaderboard() {
+      teams.forEach(team => {
+        team.total = team.erangel + team.vikendi + team.miramar + team.sanhok;
+      });
+      teams.sort((a, b) => b.total - a.total);
 
-  function updateLeaderboard() {
-  teams.sort((a, b) => b.points - a.points);
-  const table = document.getElementById('leaderboard');
-  table.innerHTML = '<tr><th>Rank</th><th>Participants Name</th><th>Branch</th><th>Points</th></tr>';
+      const table = document.getElementById('leaderboard');
+      table.innerHTML = '<tr><th>Rank</th><th>Team Name</th><th>Erangel</th><th>Vikendi</th><th>Miramar</th><th>Sanhok</th><th>Total Points</th></tr>';
 
-  let lastScore = -1;
-  let lastRank = 0;
-  let rankCounter = 0;
+      let highestScore = teams[0].total;
+      let lastScore = null;
+      let rank = 1;
+      let displayRank = 1;
 
-  teams.forEach((team) => {
-    rankCounter++; // Increment for each team
-    if (team.points !== lastScore) {
-      lastRank = rankCounter;
-      lastScore = team.points;
+      teams.forEach((team, index) => {
+        if (team.total !== lastScore) {
+          if (index > 0) {
+            rank = index + 1;
+          }
+          lastScore = team.total;
+          displayRank = rank;
+        }
+
+        const row = table.insertRow(-1);
+        row.innerHTML = `<td>${displayRank}</td><td><a href="${team.page}">${team.name}</a></td><td>${team.erangel}</td><td>${team.vikendi}</td><td>${team.miramar}</td><td>${team.sanhok}</td><td>${team.total}</td>`;
+
+        // Apply shimmer effect only to the top 3 ranks
+        if (displayRank === 1) {
+          row.classList.add('gold');
+        } else if (displayRank === 2) {
+          row.classList.add('green');
+        } else if (displayRank === 3) {
+          row.classList.add('blue');
+        }
+      });
     }
 
-    const row = table.insertRow(-1);
-    const rankCell = row.insertCell(0);
-    const nameCell = row.insertCell(1);
-    const branchCell = row.insertCell(2);
-    const pointsCell = row.insertCell(3);
-    rankCell.innerHTML = lastRank;
-    nameCell.innerHTML = team.name;
-    branchCell.innerHTML = team.branch;
-    pointsCell.innerHTML = team.points;
-
-    if (lastRank === 1) {
-        rankCell.classList.add('gold');
-        nameCell.classList.add('gold');
-        branchCell.classList.add('gold');
-        pointsCell.classList.add('gold');
-      } else if (lastRank === 2) {
-        rankCell.classList.add('green');
-        nameCell.classList.add('green');
-        branchCell.classList.add('green');
-        pointsCell.classList.add('green');
-      } else if (lastRank === 3) {
-        rankCell.classList.add('blue');
-        nameCell.classList.add('blue');
-        branchCell.classList.add('blue');
-        pointsCell.classList.add('blue');
-      }
-    });
-  }
-
-
-  updateLeaderboard();
-</script>
+    updateLeaderboard();
+  </script>
 </body>
 </html>
