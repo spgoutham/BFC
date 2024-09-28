@@ -134,7 +134,8 @@
       { name: "M-BTS", erangel: 1, vikendi: 0, miramar: 2, sanhok: 0, page: 'mbts.html' },
       { name: "JORD-BTS", erangel: 0, vikendi: 0, miramar: 0, sanhok: 1, page: 'jordbts.html' },
       { name: "H-BTS", erangel: 0, vikendi: 0, miramar: 1, sanhok: 0, page: 'hbts.html' },
-      { name: "BTS", erangel: 2, vikendi: 1, miramar: 1, sanhok: 0, page: 'bts.html' }
+      { name: "BTS", erangel: 2, vikendi: 1, miramar: 1, sanhok: 0, page: 'bts.html' },
+      { name: "Bloody", erangel: 0, vikendi: 0, miramar: 1, sanhok: 0, page: 'bloody.html' }
     ];
 
     function updateLeaderboard() {
@@ -146,29 +147,15 @@
       const table = document.getElementById('leaderboard');
       table.innerHTML = '<tr><th>Rank</th><th>Team Name</th><th>Erangel</th><th>Vikendi</th><th>Miramar</th><th>Sanhok</th><th>Total Points</th></tr>';
 
-      let highestScore = teams[0].total;
-      let lastScore = null;
-      let rank = 1;
-      let displayRank = 1;
-
       teams.forEach((team, index) => {
-        if (team.total !== lastScore) {
-          if (index > 0) {
-            rank = index + 1;
-          }
-          lastScore = team.total;
-          displayRank = rank;
-        }
-
         const row = table.insertRow(-1);
-        row.innerHTML = `<td>${displayRank}</td><td><a href="${team.page}">${team.name}</a></td><td>${team.erangel}</td><td>${team.vikendi}</td><td>${team.miramar}</td><td>${team.sanhok}</td><td>${team.total}</td>`;
+        row.innerHTML = `<td>${index + 1}</td><td>${team.name}</td><td>${team.erangel}</td><td>${team.vikendi}</td><td>${team.miramar}</td><td>${team.sanhok}</td><td>${team.total}</td>`;
 
-        // Apply shimmer effect only to the top 3 ranks
-        if (displayRank === 1) {
+        if (index === 0) {
           row.classList.add('gold');
-        } else if (displayRank === 2) {
+        } else if (index === 1) {
           row.classList.add('green');
-        } else if (displayRank === 3) {
+        } else if (index === 2) {
           row.classList.add('blue');
         }
       });
